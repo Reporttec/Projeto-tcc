@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReportTec</title>
+    <link rel="stylesheet" href="css/css.css">
+    <script src="js/scroll.js"></script>
+    <script src="js/form.js"></script>
+    <script src="js/game.js" defer></script>
+    <script src="js/saveTexts.js" type="module"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="imgs/logobranca.png" width="120" height="50" alt="Logo">
+            </div>
+            <div class="progress">
+                <div class="main-progress-bar">
+                    <span id="main-progress-bar-span"></span>
+                </div>
+                <div class="main-score" id="main-score">
+                    Pontuação Total: 0
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" onclick="toggleForm(0)">Relata</a></li>
+            </ul>
+        </nav>
+    </header>
+    <nav class="subnavbar">
+        <ul class="subnav-links">
+            <li><a href="javascript:void(0);" onclick="scrollToTarget('bullying')">Bullying</a></li>
+            <li><a href="javascript:void(0);" onclick="scrollToTarget('cyberbullying')">Cyberbullying</a></li>
+            <li><a href="javascript:void(0);" onclick="scrollToTarget('bullyingescola')">Bullying na escola</a></li>
+            <li><a href="javascript:void(0);" onclick="scrollToTarget('tiposbullying')">Tipos de bullying</a></li>
+            <li><a href="javascript:void(0);" onclick="scrollToTarget('tiposcyberbullying')">Tipos de cyberbullying</a></li>
+            <li><a href="javascript:void(0);" onclick="scrollToTarget('ocasiona')">O que ocasiona?</a></li>
+            <li><a href="javascript:void(0);" onclick="scrollToTarget('impactos')">Impactos/Consequências</a></li>
+            <li><a href="javascript:void(0);" onclick="scrollToTarget('intervir')">Intervenção</a></li>
+        </ul>
+    </nav>
+    <div class="form-borda" style="display: none;">
+        <div class="form-container" id="relata">
+            <h1>Relata</h1>
+            <form>
+                <div class="form-group">
+                    <label>Alguma coisa</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="textInput" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="btnsalvar">Enviar</button>
+                </div>
+                <div class="form-group-exit" onclick="toggleForm(-1)">
+                    <p>Sair</p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="column">
+                <h2 id="bullying">O Que é Bullying?</h2>
+                <p>O bullying é uma forma de violência que se manifesta através de atitudes agressivas e repetitivas...</p>
+            </div>
+            <div class="column">
+                <img src="imgs/" width="100px" height="100px">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="column">
+                <img src="imgs/" width="100px" height="100px">
+            </div>
+            <div class="column">
+                <h2 id="cyberbullying">O Que é Cyberbullying?</h2>
+                <p>O cyberbullying é um tipo de bullying que ocorre no ambiente digital...</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="column">
+                <h2 id="bullyingescola">Bullying na escola</h2>
+                <p>O bullying escolar é um fenômeno preocupante que afeta muitas instituições educacionais...</p>
+            </div>
+            <div class="column">
+                <div class="container-game" id="quiz1">
+                    <div class="question" id="question1">
+                        <p>Pergunta relacionada ao bullying?</p>
+                    </div>
+                    <div class="options">
+                        <button onclick="checkAnswer(0, 'A', this)">A. Bullying</button>
+                        <button onclick="checkAnswer(0, 'B', this)">B. Cyberbullying</button>
+                        <button onclick="checkAnswer(0, 'C', this)">C. Bullying escolar</button>
+                        <button onclick="checkAnswer(0, 'D', this)">D. Outro</button>
+                    </div>
+                    <div class="message" id="message1"></div>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <span id="progress-bar-span1"></span>
+                        </div>
+                        <div class="score" id="score1">Pontuação: 0</div>
+                    </div>
+                    <div class="final-screen" id="final-screen1">
+                        <h2>Fim do Quiz 1!</h2>
+                        <div class="score" id="final-score1">Pontuação Final: 0</div>
+                        <button onclick="restartQuiz(0)">Tentar Novamente</button>
+                        <button onclick="finishQuiz(0)">Finalizar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="column">
+                <img src="imgs/" width="100px" height="100px">
+            </div>
+            <div class="column">
+                <h2 id="tiposbullying">Tipos de Bullying</h2>
+                    <h4>Bullying Físico</h4>
+                    <p>Envolve agressões físicas diretas...</p>
+                    <h4>Bullying Verbal</h4>
+                    <p>Consiste em ataques verbais...</p>
+                    <h4>Bullying Social (ou Relacional)</h4>
+                    <p>Envolve manipulação social e exclusão...</p>
+                    <h4>Bullying Sexual</h4>
+                    <p>Comportamentos que envolvem conotações sexuais...</p>
+                    <h4>Bullying Racial/Etnico</h4>
+                    <p>Atos de discriminação e hostilidade baseados na raça...</p>
+                    <h4>Bullying de Gênero</h4>
+                    <p>Intimidação baseada no gênero...</p>
+                    <h4>Bullying de Orientação Sexual</h4>
+                    <p>Intimidação e hostilidade direcionadas a indivíduos...</p>
+                    <h4>Bullying de Necessidades Especiais</h4>
+                    <p>Intimidação dirigida a alunos com necessidades especiais...</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="column">
+            <h2 id="tiposcyberbullying">Tipos de Cyberbullying</h2>
+                <h4>Agressão Online</h4>
+                <p>Envio de mensagens ofensivas...</p>
+                <h4>Espalhamento de Rumores</h4>
+                <p>Divulgação de informações falsas...</p>
+                <h4>Imitação</h4>
+                <p>Criação de perfis falsos para se passar por outra pessoa...</p>
+                <h4>Doxing</h4>
+                <p>Divulgação de informações pessoais privadas...</p>
+                <h4>Exclusão Online</h4>
+                <p>Isolamento intencional de uma pessoa em plataformas digitais...</p>
+                <h4>Cyberstalking</h4>
+                <p>Perseguir ou assediar alguém de forma persistente...</p>
+                <h4>Publicação de Conteúdo Prejudicial</h4>
+                <p>Compartilhamento de fotos ou vídeos embaraçosos...</p>
+                <h4>Trolling</h4>
+                <p>Provocar ou irritar alguém intencionalmente na internet...</p>
+            </div>
+            <div class="column">
+                <img src="imgs/" width="100px" height="100px">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="column">
+                <div class="container-game" id="quiz2">
+                    <div class="question" id="question2">
+                        <p>Pergunta relacionada ao bullying?</p>
+                    </div>
+                    <div class="options">
+                        <button onclick="checkAnswer(1, 'A', this)">A. Bullying</button>
+                        <button onclick="checkAnswer(1, 'B', this)">B. Cyberbullying</button>
+                        <button onclick="checkAnswer(1, 'C', this)">C. Bullying escolar</button>
+                        <button onclick="checkAnswer(1, 'D', this)">D. Outro</button>
+                    </div>
+                    <div class="message" id="message2"></div>
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <span id="progress-bar-span2"></span>
+                        </div>
+                        <div class="score" id="score2">Pontuação: 0</div>
+                    </div>
+                    <div class="final-screen" id="final-screen2">
+                        <h2>Fim do Quiz!</h2>
+                        <div class="score" id="final-score2">Pontuação Final: 0</div>
+                        <button onclick="restartQuiz(1)">Tentar Novamente</button>
+                        <button onclick="finishQuiz(1)">Finalizar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="column">
+                <h2 id="ocasiona">O que ocasiona?</h2>
+                <p>O bullying e o cyberbullying são comportamentos agressivos com diversas causas interligadas...</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="column">
+                <h2 id="impactos">Impactos/Consequências</h2>
+                <p>O bullying tem impactos significativos e duradouros na vida das vítimas...</p>
+            </div>
+            <div class="column">
+                <img src="imgs/" width="100px" height="100px">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="content">
+            <div class="column">
+                <h2 id="intervir">Intervenção</h2>
+                <p>Para intervir no bullying, é essencial adotar uma abordagem abrangente e colaborativa...</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 ReportTec</p>
+    </footer>
+</body>
+</html>
